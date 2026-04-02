@@ -1,6 +1,6 @@
 import java.util.*;
 
-public class MultiLevelCache {
+public class MultiCache {
 
     // ----------- LRU CACHE IMPLEMENTATION -----------
     static class LRUCache<K, V> extends LinkedHashMap<K, V> {
@@ -41,7 +41,7 @@ public class MultiLevelCache {
 
     private final int PROMOTION_THRESHOLD = 2;
 
-    public MultiLevelCache() {
+    public MultiCache() {
         L1 = new LRUCache<>(10000);
         L2 = new LRUCache<>(100000);
         L3 = new HashMap<>();
@@ -135,7 +135,7 @@ public class MultiLevelCache {
     // ----------- MAIN METHOD (DEMO) -----------
     public static void main(String[] args) {
 
-        MultiLevelCache cache = new MultiLevelCache();
+        MultiCache cache = new MultiCache();
 
         // First access → L3
         System.out.println(cache.getVideo("video_123"));

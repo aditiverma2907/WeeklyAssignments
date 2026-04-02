@@ -1,7 +1,6 @@
 import java.util.*;
-import java.util.concurrent.*;
 
-public class DNSCache {
+public class Dnscache {
 
     // DNS Entry class
     static class DNSEntry {
@@ -28,7 +27,7 @@ public class DNSCache {
     private int hits = 0;
     private int misses = 0;
 
-    public DNSCache(int capacity) {
+    public Dnscache(int capacity) {
         this.MAX_SIZE = capacity;
 
         cache = new LinkedHashMap<String, DNSEntry>(capacity, 0.75f, true) {
@@ -117,7 +116,7 @@ public class DNSCache {
 
     // MAIN METHOD (Demo)
     public static void main(String[] args) throws InterruptedException {
-        DNSCache dnsCache = new DNSCache(3);
+        Dnscache dnsCache = new Dnscache(3);
 
         System.out.println(dnsCache.resolve("google.com"));
         System.out.println(dnsCache.resolve("google.com")); // HIT

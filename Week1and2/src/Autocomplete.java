@@ -1,6 +1,6 @@
 import java.util.*;
 
-public class AutocompleteSystem {
+public class Autocomplete {
 
     // Trie Node
     static class TrieNode {
@@ -11,7 +11,7 @@ public class AutocompleteSystem {
     private TrieNode root;
     private Map<String, Integer> globalFrequency;
 
-    public AutocompleteSystem() {
+    public Autocomplete() {
         root = new TrieNode();
         globalFrequency = new HashMap<>();
     }
@@ -80,7 +80,7 @@ public class AutocompleteSystem {
     // MAIN METHOD (Demo)
     public static void main(String[] args) {
 
-        AutocompleteSystem system = new AutocompleteSystem();
+        Autocomplete system = new Autocomplete();
 
         // Insert queries
         system.insert("java tutorial");
