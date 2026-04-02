@@ -2,7 +2,7 @@ import java.util.concurrent.*;
 import java.util.*;
 import java.util.concurrent.atomic.AtomicInteger;
 
-public class FlashSaleInventory {
+public class FlashSaleInventoryManager {
 
     // productId -> stock count
     private ConcurrentHashMap<String, AtomicInteger> stockMap;
@@ -10,7 +10,7 @@ public class FlashSaleInventory {
     // productId -> waiting list (FIFO)
     private ConcurrentHashMap<String, ConcurrentLinkedQueue<Integer>> waitingListMap;
 
-    public FlashSaleInventory() {
+    public FlashSaleInventoryManager() {
         stockMap = new ConcurrentHashMap<>();
         waitingListMap = new ConcurrentHashMap<>();
     }
@@ -60,7 +60,7 @@ public class FlashSaleInventory {
 
     // MAIN METHOD (Simulation)
     public static void main(String[] args) throws InterruptedException {
-        FlashSaleInventory manager = new FlashSaleInventory();
+        FlashSaleInventoryManager manager = new FlashSaleInventoryManager();
 
         String product = "IPHONE15_256GB";
         manager.addProduct(product, 100);
